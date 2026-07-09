@@ -1,1 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technamax (Private) Limited - Official Corporate Portal</title>
+    <style>
+        /* Premium Tech Studio Theme Variables */
+        :root {
+            --bg-primary: #090e17;      /* Deep Modern Slate Black */
+            --surface-card: #121a26;    /* Rich Tech Charcoal Base */
+            --accent-blue: #2563eb;     /* Professional Electric Blue */
+            --accent-cyan: #06b6d4;     /* Tech Studio Cyan Glow */
+            --text-primary: #f8fafc;    /* Clean Platinum Text */
+            --text-secondary: #94a3b8;  /* Muted Industrial Silver */
+            --border-glow: rgba(37, 99, 235, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphic Executive Navigation Bar */
+        nav {
+            background: rgba(18, 26, 38, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 22px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo {
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Immersive Premium Branding Hero Section */
+        .hero {
+            background: radial-gradient(circle at top, rgba(37, 99, 235, 0.12), transparent 60%);
+            padding: 130px 20px 150px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            color: var(--accent-cyan);
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 3.4rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Main Structural Dynamic Container */
+        .container {
+            max-width: 1200px;
+            margin: -60px auto 80px auto;
+            padding: 0 25px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Split Cards Grid Framework */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Premium Minimalist Profile Cards */
+        .profile-card {
+            background: var(--surface-card);
+            padding: 45px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+            transition: var(--transition);
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(37, 99, 235, 0.25);
+            box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.1);
+        }
+
+        .card-header {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .card-header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-cyan));
+        }
+
+        /* Modernized Dynamic Grid Rows */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .data-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 16px 0;
+            color: #64748b;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .data-table td {
+            text-align: right;
+            padding: 16px 0;
+            color: #e2e8f0;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Custom Badges & Layout Formatting */
+        .status-badge {
+            background: rgba(37, 99, 235, 0.08);
+            color: #60a5fa;
+            padding: 4px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .address-box {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #edf2f7;
+            line-height: 1.6;
+            max-width: 300px;
+            display: inline-block;
+            text-align: right;
+        }
+
+        /* Statutory Compliance Box */
+        .compliance-box {
+            background: linear-gradient(90deg, rgba(18, 24, 36, 0.6), rgba(30, 41, 59, 0.4));
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .compliance-box p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Premium Clean Footer */
+        footer {
+            background-color: #06090e;
+            color: #4b5563;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 100px;
+            border-top: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        footer .footer-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Executive Top Navigation -->
+    <nav>
+        <div class="logo">TECHNAMAX <span>STUDIOS</span></div>
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#registry">Corporate Profile</a></li>
+            <li><a href="#compliance">Regulatory Framework</a></li>
+        </ul>
+    </nav>
+
+    <!-- Branding Hero Area -->
+    <section class="hero" id="overview">
+        <div class="verified-badge">
+            💻 FBR Verified Technology Registry
+        </div>
+        <h1>TECHNAMAX ( PRIVATE ) LIMITED</h1>
+        <p>Deploying cutting-edge enterprise infrastructures, architectural software layers, and absolute compliance transparency.</p>
+    </section>
+
+    <!-- Core Content Container -->
+    <div class="container" id="registry">
+        <div class="grid">
+            
+            <!-- Left Card: Corporate Identifiers -->
+            <div class="profile-card">
+                <div class="card-header">Corporate Identification</div>
+                <table class="data-table">
+                    <tr>
+                        <th>Company Legal Name</th>
+                        <td style="color: var(--accent-cyan);">TECHNAMAX ( PRIVATE ) LIMITED</td>
+                    </tr>
+                    <tr>
+                        <th>Registration No.</th>
+                        <td>0299142</td>
+                    </tr>
+                    <tr>
+                        <th>Incorporation No.</th>
+                        <td>850409341</td>
+                    </tr>
+                    <tr>
+                        <th>Date of Registration</th>
+                        <td>01-July-2025</td>
+                    </tr>
+                    <tr>
+                        <th>Structure Classification</th>
+                        <td><span class="status-badge">Private Limited Company</span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Right Card: Statutory Jurisdiction & Coordinates -->
+            <div class="profile-card">
+                <div class="card-header">Taxation & Location Registry</div>
+                <table class="data-table">
+                    <tr>
+                        <th>Activity Classification</th>
+                        <td><span class="status-badge" style="background: rgba(6, 182, 212, 0.05); color: #22d3ee; border-color: rgba(6, 182, 212, 0.2);">Business</span></td>
+                    </tr>
+                    <tr>
+                        <th>Principal Tax Jurisdiction</th>
+                        <td>CRO Lahore</td>
+                    </tr>
+                    <tr>
+                        <th>Official Registered Address</th>
+                        <td>
+                            <span class="address-box">
+                                Plaza No. 152 1st Floor Block H Phase 1 Dha Lahore, 54000 Pakistan
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- Compliance Framework Box -->
+        <div class="compliance-box" id="compliance">
+            <p><strong>Regulatory Compliance Notice:</strong> The infrastructure parameters and organizational data displayed above are verified in strict accordance with the official Taxpayer Registration Certificate issued under Section 181C of the Income Tax Ordinance 2001 by the Federal Board of Revenue (FBR), Government of Pakistan.</p>
+        </div>
+    </div>
+
+    <!-- Executive Footer -->
+    <footer>
+        <div class="footer-title">TECHNAMAX ( PRIVATE ) LIMITED</div>
+        <p>Registered Office: Plaza No. 152 1st Floor Block H Phase 1 Dha Lahore, Pakistan.</p>
+        <p style="margin-top: 20px; color: #1e293b;">&copy; 2026 Technamax. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
